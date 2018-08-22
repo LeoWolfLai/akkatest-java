@@ -1,7 +1,5 @@
 package akkatest;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import akka.actor.AbstractLoggingActor;
@@ -50,8 +48,7 @@ public class Aggregator extends AbstractLoggingActor {
 
     private void processLine(Line msg) {
         String str = msg.line;
-        List<String> splitWord = Stream.of(str.split(" ")).collect(Collectors.toList());
-        this.wordCount += splitWord.size();
+        this.wordCount += Stream.of(str.split(" ")).count();
     }
 
     private void printWordsCount(EndOfFile msg) {
