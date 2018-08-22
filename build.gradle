@@ -1,0 +1,20 @@
+group 'akkatest'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.typesafe.akka:akka-actor_2.12:2.5.3'
+    compile 'com.typesafe.akka:akka-slf4j_2.12:2.5.3'
+    compile 'com.typesafe.akka:akka-testkit_2.12:2.5.3'
+}
+
+mainClassName = "AkkaTest"
